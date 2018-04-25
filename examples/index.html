@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="../index.js"></script>
+</head>
+<body>
+Open debugger to see output.
+
+<script>
+async function* render(template) {
+	for await(const value of this) {
+		yield Function("return `" + template + "`").call(value);
+	}
+}
+async function* log() {
+	for await(const value of this) {
+		console.log(value);
+		yield value;
+	}
+}
+NanoPipe.pipeable(render);
+NanoPipe.pipeable(log);
+
+const mypipe1 = NanoPipe().render("Name: ${this.name}").log(),
+	mypipe2 = NanoPipe().log();
+
+mypipe1.pipe([{name:"Joe"},{name:"Mary"}]);
+mypipe1.pipe([{name:"Jane"}]);
+mypipe2.pipe([{name:"Joe"},{name:"Mary"}]);
+
+</script>
+</body>
+</html>
