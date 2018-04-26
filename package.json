@@ -1,6 +1,6 @@
 {
 	"name": "nano-pipe",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A tiny library (<350 bytes gzipped) to create chainable functions/pipelines.",
 	"private": false,
 	"isomorphic": true,
@@ -13,9 +13,7 @@
 		"type": "git",
 		"url": "git+https://github.com/anywhichway/nano-pipe.git"
 	},
-	"dependencies": {
-		
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"chai": "^4.1.0",
 		"mocha": "^3.4.2"

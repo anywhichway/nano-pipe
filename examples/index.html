@@ -6,16 +6,12 @@
 Open debugger to see output.
 
 <script>
-async function* render(template) {
-	for await(const value of this) {
-		yield Function("return `" + template + "`").call(value);
-	}
+function render(template) {
+	return Function("return `" + template + "`").call(this);
 }
-async function* log() {
-	for await(const value of this) {
-		console.log(value);
-		yield value;
-	}
+function log() {
+	console.log(this);
+	return this;
 }
 NanoPipe.pipeable(render);
 NanoPipe.pipeable(log);
@@ -26,6 +22,7 @@ const mypipe1 = NanoPipe().render("Name: ${this.name}").log(),
 mypipe1.pipe([{name:"Joe"},{name:"Mary"}]);
 mypipe1.pipe([{name:"Jane"}]);
 mypipe2.pipe([{name:"Joe"},{name:"Mary"}]);
+mypipe2.pipe(async function*() { yield {name:"John"}; }());
 
 </script>
 </body>
