@@ -14,7 +14,7 @@ NanoPipe can be used in three easy steps:
 
 1) Use the static method `NanoPipe.pipeable(function[,string])` to make functions chainable. You can pass in a regular function,
 an async function, a generator, or an async generator. If it is anonymous, you can pass in a string for the name. It will be called with 
-each upstream value passed down the pipe bound to `this`. With the exception of `undefined`, values yieled or returned by your function 
+each upstream value passed down the pipe bound to `this`. With the exception of `undefined`, values yielded or returned by your function 
 are passed further down the pipeline.
 
 ```
