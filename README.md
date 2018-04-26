@@ -1,9 +1,12 @@
 # nano-pipe
-A tiny library (<450 bytes gzipped) to create chainable functions/pipelines.
+
+A tiny library (<450 bytes gzipped) to create chainable functions/pipelines including support for async generators.
 
 # Installation
 
 npm install nano-pipe
+
+NanoPipe uses ES2016 and is not provided in transpiled form.
 
 # Usage
 
