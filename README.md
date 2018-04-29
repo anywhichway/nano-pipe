@@ -54,8 +54,45 @@ mypipe2.pipe([{name:"Joe"},{name:"Mary"}]);
 mypipe2.pipe(async function*() { yield {name:"Joe"}; }());
 ```
 
+`pipe` returns a Promise for an array of final values, so you can loop over them like this:
+
+
+```
+mypipe1.pipe([{name:"Joe"},{name:"Mary"}).then(array => { for(const item of array) console.log(item); });
+```
+
+# Examples
+
+1) Load `examples/index.html` in your browser to see he above code in action.
+
+2) Run `node --harmony examples/scrape.js` to see a web scraping pipeline.
+
+# API
+
+## Instance Methods
+
+`pipe(iterable)` - The last call in a pipe chain invokes pipe processing and returns a Promise for an array of results based on the input iterable. All other methods are up to you!
+
+## Static Method For Custom Functions
+
+`NanoPipe.pipeable(function[,name])` - You can pass in any of the following function types to make the function available as part of a pipe:
+
+1) function() {}
+
+2) async function() {}
+
+3) function*() {}
+
+4) async function*() { }
+
+Use `name` if your function is anonymous or you want to use a different name in the pipe.
+
+`pipeable` is chainable so you can call `NanoPipe.pipeable(f1).pipeable(f2)...`.
+
 
 # Release History (reverse chronological order)
+
+2018-04-28 - v0.0.4 Made `pipeable` chainable. Added web scraping example.
 
 2018-04-28 - v0.0.3 Added "use strict" and test script
 

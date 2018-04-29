@@ -10,6 +10,7 @@
 			this.steps.push({f,args});
 			return this;
 		}
+		return this;
 	}
 	NanoPipe.prototype.pipe = async function(values) {
 		this.prvs = async function*() { for await(const value of values) yield value; }();
