@@ -92,6 +92,8 @@ Use `name` if your function is anonymous or you want to use a different name in 
 
 # Release History (reverse chronological order)
 
+2018-04-28 - v0.0.5 Updated scraping example.
+
 2018-04-28 - v0.0.4 Made `pipeable` chainable. Added web scraping example.
 
 2018-04-28 - v0.0.3 Added "use strict" and test script
