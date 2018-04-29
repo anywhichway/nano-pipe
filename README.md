@@ -8,6 +8,11 @@ npm install nano-pipe
 
 NanoPipe uses ES2016 and is not provided in transpiled form.
 
+Version 9x of NodeJS requires the use of the --harmony flag.
+
+You can use the code un-transpiled in the most recent versions of Chrome and Firefox. Edge requires transpiling.
+
+
 # Usage
 
 NanoPipe can be used in three easy steps:
@@ -51,6 +56,8 @@ mypipe2.pipe(async function*() { yield {name:"Joe"}; }());
 
 
 # Release History (reverse chronological order)
+
+2018-04-28 - v0.0.3 Added "use strict" and test script
 
 2018-04-25 - v0.0.2 Added unit tests. Added support for multiple function types.
 

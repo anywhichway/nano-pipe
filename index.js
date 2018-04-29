@@ -1,4 +1,5 @@
-(function() {
+(function() {	
+	"use strict"
 	function NanoPipe() {
 		if(!this || !(this instanceof NanoPipe)) return new NanoPipe();
 		this.steps = [];
