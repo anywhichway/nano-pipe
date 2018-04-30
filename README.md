@@ -45,9 +45,9 @@ const mypipe1 = NanoPipe().render("Name: ${this.name}").log(),
 3) Use the pipelines by feeding them iterables with `<pipe>.pipe(iterable)`, including instantiated sychronous or asynchronous generators, as many times as you want, e.g.
 
 ```
-mypipe1.pipe([{name:"Joe"},{name:"Mary"});
+mypipe1.pipe([{name:"Joe"},{name:"Mary"}]);
 
-mypipe1.pipe([{name:"Jane"});
+mypipe1.pipe([{name:"Jane"}]);
 
 mypipe2.pipe([{name:"Joe"},{name:"Mary"}]);
 
@@ -58,7 +58,7 @@ mypipe2.pipe(async function*() { yield {name:"Joe"}; }());
 
 
 ```
-mypipe1.pipe([{name:"Joe"},{name:"Mary"}).then(array => { for(const item of array) console.log(item); });
+mypipe1.pipe([{name:"Joe"},{name:"Mary"}]).then(array => { for(const item of array) console.log(item); });
 ```
 
 # Examples
@@ -91,6 +91,8 @@ Use `name` if your function is anonymous or you want to use a different name in 
 
 
 # Release History (reverse chronological order)
+
+2018-04-30 - v0.0.6 Corrected README.md example typos.
 
 2018-04-28 - v0.0.5 Updated scraping example.
 

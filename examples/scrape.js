@@ -47,7 +47,7 @@ function analyzeHead() {
 
 function analyzeBody() {
 	// this could invoke processing on another server or thread
-	//return <results of analysis>
+	// return <results of analysis>
 	return Promise.resolve({title:this.title,
 		length:this.body.innerHTML.length});
 }
@@ -60,6 +60,5 @@ function save(db) {
 NanoPipe.pipeable(getUrl).pipeable(toDOM).pipeable(logTitle).pipeable(splitAnalysis).pipeable(analyzeHead).pipeable(analyzeBody).pipeable(save);
 
 const scraper = NanoPipe().getUrl().toDOM().logTitle().splitAnalysis();
-
 scraper.pipe(["https://www.cnn.com","https://www.msn.com"]);
 scraper.pipe(["https://www.foxnews.com"]);

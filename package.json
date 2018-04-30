@@ -1,6 +1,6 @@
 {
 	"name": "nano-pipe",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "A tiny library (<450 bytes gzipped) to create chainable functions/pipelines including support for async generators.",
 	"private": false,
 	"isomorphic": true,
