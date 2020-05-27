@@ -92,6 +92,8 @@ Use `name` if your function is anonymous or you want to use a different name in 
 
 # Release History (reverse chronological order)
 
+2020-05-27 - v0.0.7 Adjusted to me more minimization robust by elimiating some compact destructures.
+
 2018-04-30 - v0.0.6 Corrected README.md example typos.
 
 2018-04-28 - v0.0.5 Updated scraping example.

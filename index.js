@@ -7,7 +7,7 @@
 	}
 	NanoPipe.pipeable = function(f,name) {
 		NanoPipe.prototype[name||f.name] = function(...args) {
-			this.steps.push({f,args});
+			this.steps.push({f:f,args});
 			return this;
 		}
 		return this;
